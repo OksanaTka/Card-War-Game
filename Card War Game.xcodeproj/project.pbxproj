@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A20FEDC280ED0DF009C42F0 /* GameBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A20FEDB280ED0DF009C42F0 /* GameBrain.swift */; };
+		8A20FEDE280ED11B009C42F0 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A20FEDD280ED11B009C42F0 /* Player.swift */; };
 		8AC472FA280743DE00E06717 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC472F9280743DE00E06717 /* AppDelegate.swift */; };
 		8AC472FC280743DE00E06717 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC472FB280743DE00E06717 /* SceneDelegate.swift */; };
 		8AC472FE280743DE00E06717 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AC472FD280743DE00E06717 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A20FEDB280ED0DF009C42F0 /* GameBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameBrain.swift; sourceTree = "<group>"; };
+		8A20FEDD280ED11B009C42F0 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		8AC472F6280743DE00E06717 /* Card War Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Card War Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8AC472F9280743DE00E06717 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8AC472FB280743DE00E06717 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +41,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A20FED8280EC9F9009C42F0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8A20FEDB280ED0DF009C42F0 /* GameBrain.swift */,
+				8A20FEDD280ED11B009C42F0 /* Player.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8A20FED9280ECA01009C42F0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8AC472FD280743DE00E06717 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		8A20FEDA280ECA0A009C42F0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8AC472FF280743DF00E06717 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		8AC472ED280743DE00E06717 = {
 			isa = PBXGroup;
 			children = (
@@ -56,10 +85,11 @@
 		8AC472F8280743DE00E06717 /* Card War Game */ = {
 			isa = PBXGroup;
 			children = (
+				8A20FED8280EC9F9009C42F0 /* Models */,
+				8A20FEDA280ECA0A009C42F0 /* Views */,
+				8A20FED9280ECA01009C42F0 /* Controllers */,
 				8AC472F9280743DE00E06717 /* AppDelegate.swift */,
 				8AC472FB280743DE00E06717 /* SceneDelegate.swift */,
-				8AC472FD280743DE00E06717 /* ViewController.swift */,
-				8AC472FF280743DF00E06717 /* Main.storyboard */,
 				8AC47302280743DF00E06717 /* Assets.xcassets */,
 				8AC47304280743DF00E06717 /* LaunchScreen.storyboard */,
 				8AC47307280743DF00E06717 /* Info.plist */,
@@ -138,8 +168,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A20FEDC280ED0DF009C42F0 /* GameBrain.swift in Sources */,
 				8AC472FE280743DE00E06717 /* ViewController.swift in Sources */,
 				8AC472FA280743DE00E06717 /* AppDelegate.swift in Sources */,
+				8A20FEDE280ED11B009C42F0 /* Player.swift in Sources */,
 				8AC472FC280743DE00E06717 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +324,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -319,6 +352,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
