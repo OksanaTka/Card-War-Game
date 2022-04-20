@@ -32,29 +32,33 @@ struct GameBrain {
     
     
     func getRandomNumber(maxNumber:Int) -> Int{
-        return Int.random(in: 1 ..< maxNumber)
+        let temp = Int.random(in: 1 ..< maxNumber)
+        print("temp: \(temp)")
+        return temp
     }
     
     
     mutating func getProgress() -> Float{
         gamesPlayed += 1
-        print(Float(gamesPlayed) / Float(gamesTotalAmount))
+        
         return Float(gamesPlayed) / Float(gamesTotalAmount)
     }
     
     mutating func getNextCard() -> String{
-       let  cardValue = getRandomNumber(maxNumber: cardsAmount)
+        let  cardNumber = getRandomNumber(maxNumber: cardsAmount)
+        let cardValue = cardScore(cardNumber)
         
         
         if firstPlayer{
             player_1?.player_score += cardValue
+            
         }else{
             player_2?.player_score += cardValue
         }
         
-    
         firstPlayer = !firstPlayer
-        return "poker-\(cardValue)"
+        
+        return "poker-\(cardNumber)"
     }
     
     mutating func initPlayers(){
@@ -66,6 +70,24 @@ struct GameBrain {
         let imageNumber = getRandomNumber(maxNumber: avatarAmount+1)
         return "avatar-\(imageNumber)"
     }
+    
+    
+    func getWinnerMessage() -> String{
+        let score1 = getPlayer1Score()
+        let score2 = getPlayer2Score()
+        
+        if score1 > score2{
+            return "\(getPlayer1Name()) WINS!"
+        }else if score1 <= score2{
+            return "\(getPlayer2Name()) WINS!"
+        }else{
+            return "Both players WON!"
+        }
+        
+        
+            
+    }
+    
     
     func getPlayer1Score() -> Int{
         return player_1?.player_score ?? 0
@@ -86,5 +108,22 @@ struct GameBrain {
     }
     func getPlayer2Image() ->String{
         return player_2?.player_image ?? "avatar-0"
+    }
+    
+    mutating func setPlayer1Name(name :String){
+        player_1?.player_name = name.isEmpty ? "Player 1" : name
+    }
+    
+    mutating func setPlayer2Name(name :String){
+        player_2?.player_name = name.isEmpty ? "Player 2" :name
+    }
+    
+    
+    func cardScore(_ cardNumber : Int) -> Int{
+        var cardValue  = cardNumber / 4
+        if(cardNumber % 4 == 0){
+            cardValue -= 1
+        }
+        return (cardValue + 2)
     }
 }

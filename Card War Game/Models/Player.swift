@@ -7,7 +7,7 @@
 
 import UIKit
 struct Player {
-    let player_name : String
+    var player_name : String
     var player_image : String
     var player_score : Int
     
